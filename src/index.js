@@ -9,6 +9,8 @@ let dummy2 = document.getElementById('dummy2')
 dummy2.remove()
 
 let cakeList = document.getElementById('cake-list')
+let reviewForm = document.getElementById('review-form')
+console.log("form", reviewForm)
 
 const request = async () => {
     let req = await fetch('http://localhost:3000/cakes')
@@ -33,6 +35,13 @@ const request = async () => {
         cakeList.appendChild(liItem)
     })
 
-    
+    reviewForm.addEventListener('submit', (e) => {
+        e.preventDefault()
+        // alert('clicky')
+        let liNew = document.createElement('li')
+        liNew.innerText = review.value
+        reviewList.appendChild(liNew)
+    })
+
 }
 request()
