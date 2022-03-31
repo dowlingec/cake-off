@@ -29,12 +29,14 @@ const request = async () => {
         reviewList.append(li)
     })
 
+
     res.forEach((element) => {
         let liItem = document.createElement('li')
         liItem.innerText = element.name
         cakeList.appendChild(liItem)
     })
 
+    
     reviewForm.addEventListener('submit', (e) => {
         e.preventDefault()
         // alert('clicky')
@@ -42,6 +44,5 @@ const request = async () => {
         liNew.innerText = review.value
         reviewList.appendChild(liNew)
     })
-
 }
 request()
