@@ -43,6 +43,7 @@ const request = async () => {
         let liNew = document.createElement('li')
         liNew.innerText = review.value
         reviewList.appendChild(liNew)
+        review.value = ""
     })
 }
 request()
