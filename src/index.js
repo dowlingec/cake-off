@@ -5,8 +5,10 @@ let reviewList = document.getElementById('review-list')
 
 let dummy = document.getElementById('dummy')
 dummy.remove()
-let dummy2 = document.getElementById('dummy')
+let dummy2 = document.getElementById('dummy2')
 dummy2.remove()
+
+let cakeList = document.getElementById('cake-list')
 
 const request = async () => {
     let req = await fetch('http://localhost:3000/cakes')
@@ -24,6 +26,13 @@ const request = async () => {
         li.innerText = element
         reviewList.append(li)
     })
+
+    res.forEach((element) => {
+        let liItem = document.createElement('li')
+        liItem.innerText = element.name
+        cakeList.appendChild(liItem)
+    })
+
     
 }
 request()
